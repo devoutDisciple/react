@@ -2,11 +2,12 @@
     "presets": [
       "es2015",
       "stage-2",
-      "react"
+      "react",
+      "mobx"
     ],
     "plugins": [
-      ["import", { "libraryName": "antd", "libraryDirectory": "es", "style": true }],
-      "react-hot-loader/babel",
-      "transform-decorators-legacy"
+        "react-hot-loader/babel",
+        ["import", { "libraryName": "antd", "libraryDirectory": "es", "style": true }],
+        "transform-decorators-legacy"
     ]
   }

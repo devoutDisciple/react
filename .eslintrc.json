@@ -12,13 +12,13 @@
     "parserOptions": {
         "ecmaVersion": 6,
         "ecmaFeatures": {
-            "experimentalObjectRestSpread": true,
             "jsx": true
         },
         "sourceType": "module"
     },
+    "parser": "babel-eslint" ,
     "plugins": [
-        "react"
+        "react", "babel"
     ],
     "rules": {
         "indent": [
@@ -37,6 +37,9 @@
             "error",
             "always"
         ],
-        "no-console": 0
+        "no-console": 0,
+        "smart-tabs": 0,
+        "no-mixed-spaces-and-tabs": 0,
+        "react/prop-types": 0
     }
 }

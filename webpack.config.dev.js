@@ -55,7 +55,7 @@ module.exports = (env, argv) => {
 		entry: [
 			'babel-polyfill',
 			'react-hot-loader/patch', //webpack的局部热更新 设置这里
-			'./src/main.js',
+			'./src/main.jsx',
 		],
 		output: {
 			path: path.join(__dirname, 'dist'),
