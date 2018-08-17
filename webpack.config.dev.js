@@ -4,13 +4,15 @@ const webpack = require('webpack');
 const os = require('os');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
+const CleanCSSPlugin = require('less-plugin-clean-css');
 const HappyPack = require('happypack');
 const chalk = require('chalk');
 // const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const COMMON_0_CSS = new ExtractTextPlugin('common.0.css', {allChunks: true});
 const COMMON_1_CSS = new ExtractTextPlugin('common.1.css', {allChunks: true});
-const COMMON_1_LESS = new ExtractTextPlugin('common.0.css', {allChunks: true});
+const COMMON_0_LESS = new ExtractTextPlugin('app.0.css', {allChunks: true});
+const COMMON_1_LESS = new ExtractTextPlugin('app.1.css', {allChunks: true});
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 
 const cleanOptions = {
@@ -68,7 +70,7 @@ module.exports = (env, argv) => {
 			historyApiFallback: true,
 			proxy: {
 				'/v1': {
-					target: 'http://192.168.53.6:8081',
+					target: 'http://localhost:8081',
 					pathRewrite: {'^/v1' : '/v1'},
 					changeOrigin: true,
 				}
@@ -77,7 +79,7 @@ module.exports = (env, argv) => {
 		module: {
 			rules: [{
 				test: /\.(js|jsx)$/,
-				exclude: /node_modules/,
+                exclude: /node_modules/,
 				use: [{
 					loader: 'babel-loader',
 					options: {
@@ -119,8 +121,8 @@ module.exports = (env, argv) => {
 				})
 			},
 			{
-				test: /\.less$/,
-				use: COMMON_1_LESS.extract({
+                test: /\.less$/,
+				use: COMMON_0_LESS.extract({
 					fallback: 'style-loader',
 					use: [
 						{
@@ -134,12 +136,43 @@ module.exports = (env, argv) => {
 							loader: 'less-loader',
 							options: {
 								javascriptEnabled: true,
-								sourceMap: argv.mode == 'development',
-							}
+                                sourceMap: argv.mode == 'development',
+                                plugins: [
+                                    new CleanCSSPlugin({ advanced: true })
+                                ]
+                            },
 						}
 					]
 				})
-			},
+            },
+            // {
+            //     test: /\.less$/,
+            //     exclude: path.join(__dirname, 'node_modules'),
+			// 	use: COMMON_1_LESS.extract({
+			// 		fallback: 'style-loader',
+			// 		use: [
+			// 			{
+			// 				loader: 'css-loader',
+			// 				options: {
+			// 					minimize: argv.mode == 'production',
+            //                     sourceMap: argv.mode == 'development',
+            //                     // modules: true,
+            //                     // localIndentName: '[path][name]__[local]--[hash:base64:5]'
+			// 				}
+			// 			},
+			// 			{
+			// 				loader: 'less-loader',
+			// 				options: {
+			// 					javascriptEnabled: true,
+            //                     sourceMap: argv.mode == 'development',
+            //                     plugins: [
+            //                         new CleanCSSPlugin({ advanced: true })
+            //                     ]
+            //                 },
+			// 			}
+			// 		]
+			// 	})
+			// },
 			{
 				test: /\.(png|svg|jpg|gif|woff|woff2|eot|ttf|otf)$/,
 				use: [
@@ -160,7 +193,15 @@ module.exports = (env, argv) => {
 			fs: 'empty'
 		},
 		resolve: {
-			extensions: ['.js', '.jsx', '.less', '.json']
+            extensions: ['.js', '.jsx', '.less', '.json'],
+            alias: {
+                $component: path.resolve(__dirname, 'src/component'),
+                $utils: path.resolve(__dirname, 'src/utils'),
+                $router: path.resolve(__dirname, 'src/router'),
+                $stores: path.resolve(__dirname, 'src/stores'),
+                $config: path.resolve(__dirname, 'src/config'),
+                $apis: path.resolve(__dirname, 'src/apis'),
+            }
 		},
 		plugins: [
 			COMMON_0_CSS,
@@ -201,7 +242,8 @@ module.exports = (env, argv) => {
 			new webpack.optimize.OccurrenceOrderPlugin()
 		],
 		devtool: argv.mode == 'development' ? 'inline-source-map' : false,
-	};
+    };
+    console.log(configuration);
 	if(argv.mode == 'development' || _.includes(_.toLower(commandTarget), 'dev')) {
 		// configuration.plugins.unshift(clean_plugin);
 		_.concat(configuration.plugins, hot_plugin);

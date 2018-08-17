@@ -1,0 +1,39 @@
+// 1: 如果其他类名下直接引用该类名，则该类的样式或直接过渡到引用的那个类中 minxins
+.width_height_100{
+    width: 100%;
+    height: 100%;
+}
+.test_minxins{
+    .width_height_100;
+}
+// 2：定义变量 Variables
+@nice-blue: #5B83AD;
+@light-blue: @nice-blue + #111;
+.test_var{
+    color: @light-blue;
+}
+
+// 3： 引用
+@images: "../img";
+// Usage
+.test_import {
+  color: #444;
+  background: url("@{images}/white-sand.png");
+}
+@themes: "../../src/themes";
+
+// 4：函数
+@base: #f938ab;
+
+.box-shadow(@style, @c) when (iscolor(@c)) {
+  -webkit-box-shadow: @style @c;
+  box-shadow:         @style @c;
+}
+.box-shadow(@style, @alpha: 50%) when (isnumber(@alpha)) {
+  .box-shadow(@style, rgba(0, 0, 0, @alpha));
+}
+.box {
+  color: saturate(@base, 5%);
+  border-color: lighten(@base, 30%);
+  div { .box-shadow(0 0 5px, 30%) }
+}

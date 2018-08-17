@@ -1,7 +1,7 @@
 const webpack = require('webpack');
 const path = require('path');
 const pkg = require('./package.json');
-const _ = require('lodash');
+const _ = require('../../../AppData/Local/Microsoft/TypeScript/2.9/node_modules/@types/lodash');
 
 module.exports = {
 	output: {
@@ -11,7 +11,7 @@ module.exports = {
 	},
 	entry: {
 		'lib': _.filter(_.keys(pkg.dependencies), (dependency) => {
-			return !_.includes('axios', dependency);
+			return !_.includes('@types', dependency);
 		}),
 	},
 	plugins: [

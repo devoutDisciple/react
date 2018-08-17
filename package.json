@@ -10,7 +10,7 @@
     "start": "webpack-dev-server --progress --profile --colors --config ./webpack.config.dev.js --mode development",
     "product": "webpack-dev-server --progress --profile --colors --config ./webpack.config.prod.js --mode production",
     "build:prod": "webpack -p --config ./webpack.config.dev.js --mode production --progress --profile --colors",
-    "build:dev": "npm run dll && node pack.js && webpack --progress --profile --colors --config ./webpack.config.dev.js --mode development",
+    "build:dev": "webpack --progress --profile --colors --config ./webpack.config.dev.js --mode development",
     "build:test": "npm run build:dev",
     "dll": "webpack -p --config ./dll.config.js --progress --profile --colors --mode development && node pack.js"
   },
@@ -30,11 +30,13 @@
     "moment": "^2.22.2",
     "react": "^16.4.1",
     "react-dom": "^16.4.1",
-    "react-router": "^4.3.1"
+    "react-router": "^4.3.1",
+    "react-router-dom": "^4.4.0-alpha.1"
   },
   "devDependencies": {
     "@types/clean-webpack-plugin": "^0.1.2",
     "@types/react-router": "^4.0.30",
+    "@types/react-router-dom": "^4.3.0",
     "babel": "^6.23.0",
     "babel-core": "^6.26.3",
     "babel-eslint": "^8.2.6",
@@ -57,6 +59,8 @@
     "html-webpack-plugin": "^3.2.0",
     "less": "^3.7.1",
     "less-loader": "^4.1.0",
+    "less-plugin-clean-css": "^1.5.1",
+    "mobx-react-devtools": "^6.0.2",
     "react-hot-loader": "^4.3.4",
     "style-loader": "^0.21.0",
     "uglify-js-plugin": "0.0.6",
