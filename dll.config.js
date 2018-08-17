@@ -1,7 +1,7 @@
 const webpack = require('webpack');
 const path = require('path');
 const pkg = require('./package.json');
-const _ = require('../../../AppData/Local/Microsoft/TypeScript/2.9/node_modules/@types/lodash');
+const _ = require('lodash');
 
 module.exports = {
 	output: {
