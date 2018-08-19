@@ -18,3 +18,5 @@ export const formItemLineLayout = {
     wrapperCol: { span: 18 },
 };
 
+export const INIT_ROUTER = '/antd/other';
+

@@ -243,7 +243,6 @@ module.exports = (env, argv) => {
 		],
 		devtool: argv.mode == 'development' ? 'inline-source-map' : false,
     };
-    console.log(configuration);
 	if(argv.mode == 'development' || _.includes(_.toLower(commandTarget), 'dev')) {
 		// configuration.plugins.unshift(clean_plugin);
 		_.concat(configuration.plugins, hot_plugin);

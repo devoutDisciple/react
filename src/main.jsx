@@ -1,8 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import TestStore1 from './stores/TestStore';
-import TestStore2 from './stores/TestStore2';
 import AntdFormStore from './stores/antd/FormStore';
+import OtherStore from './stores/antd/OtherStore';
+import MapStore from './stores/map/MapStore';
 import {Provider} from 'mobx-react';
 import {configure} from 'mobx';
 import App from './router/RootRouter';
@@ -11,9 +11,10 @@ import './index';
 
 
 const stores = {
-	TestStore1,
-    TestStore2,
-    AntdFormStore
+    AntdFormStore,
+    OtherStore,
+	MapStore,
+
 };
 // 开启严格模式
 configure({ enforceActions: 'strict' });

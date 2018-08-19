@@ -8,24 +8,22 @@ const list = [
                 key: 'form',
                 label: 'form',
                 icon: 'lock',
-                path: '/'
+                path: '/antd/form'
+            },
+            {
+                key: 'other',
+                label: 'other',
+                icon: 'ellipsis',
+                path: '/antd/other'
             },
 
         ]
     },
     {
-        key: 'echarts',
-        label: 'echarts',
-        icon: 'area-chart',
-        children: [
-            {
-                key: 'line',
-                label: '折线图',
-                icon: 'line-chart',
-                path: '/'
-            },
-
-        ]
+        key: 'map',
+        label: '地图',
+        icon: 'alipay-circle',
+        path: '/map'
     },
     {
         key: 'sub_2',
