@@ -26,9 +26,21 @@ const list = [
         path: '/map'
     },
     {
+        key: 'flow',
+        label: 'flow',
+        icon: 'alipay-circle',
+        path: '/flow'
+    },
+    {
+        key: 'dnd',
+        label: 'dnd',
+        icon: 'alipay-circle',
+        path: '/dnd'
+    },
+    {
         key: 'sub_2',
         label: '可视化数据2',
-        icon: 'area-chart4',
+        icon: 'alipay-circle',
         children: [
             {
                 key: 'sub_2_1',

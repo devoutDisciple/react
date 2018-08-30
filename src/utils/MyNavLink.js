@@ -6,7 +6,7 @@ export const MyNavLink = (props) => {
         <NavLink
             to={props.path}>
             {props.icon ? <Icon type={props.icon} /> : null}
-            {props.children}
+            <span>{props.children}</span>
         </NavLink>
     );
 };
