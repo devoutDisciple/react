@@ -38,6 +38,12 @@ const list = [
         path: '/dnd'
     },
     {
+        key: 'd3',
+        label: 'd3',
+        icon: 'alipay-circle',
+        path: '/d3'
+    },
+    {
         key: 'sub_2',
         label: '可视化数据2',
         icon: 'alipay-circle',
