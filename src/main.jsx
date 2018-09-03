@@ -5,6 +5,8 @@ import {Provider} from 'mobx-react';
 import {configure} from 'mobx';
 import App from './router/RootRouter';
 import {HashRouter} from 'react-router-dom';
+import { DragDropContextProvider } from 'react-dnd';
+import HTML5Backend from 'react-dnd-html5-backend';
 import './index';
 
 
@@ -15,9 +17,11 @@ configure({ enforceActions: 'strict' });
 const render = () => {
 	ReactDOM.render(
         <Provider {...stores}>
-            <HashRouter>
-                <App />
-            </HashRouter>
+            <DragDropContextProvider backend={HTML5Backend}>
+                <HashRouter>
+                    <App />
+                </HashRouter>
+            </DragDropContextProvider>
 		</Provider>,
 		document.getElementById('root')
 	);
