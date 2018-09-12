@@ -26,6 +26,12 @@ const list = [
         path: '/map'
     },
     {
+        key: 'chat',
+        label: '聊天室',
+        icon: 'alipay-circle',
+        path: '/chat'
+    },
+    {
         key: 'flow',
         label: 'flow',
         icon: 'alipay-circle',

@@ -5,6 +5,7 @@ import HomeStore from './home/HomeStore';
 import DndStore from './dnd/DndStore';
 import FlowStore from './flow/FlowStore';
 import D3Store from './d3/D3Store';
+import ChatStore from './chat/ChatStore';
 
 export const createStore = () => {
     return {
@@ -14,6 +15,7 @@ export const createStore = () => {
         HomeStore,
         DndStore,
         FlowStore,
-        D3Store
+        D3Store,
+        ChatStore
     };
 };
