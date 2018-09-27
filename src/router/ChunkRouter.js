@@ -6,6 +6,7 @@ import Map from '$component/Map/Map';
 import Dnd from '$component/dnd/index';
 import Flow from '$component/flow/index';
 import D3View from '../component/d3/index';
+import ChatView from '../component/chat/index';
 import {INIT_ROUTER} from '$config/stateConfig';
 
 
@@ -19,6 +20,7 @@ const ChunkRoute = () => {
             <Route path="/flow" component={Flow}></Route>
             <Route path="/dnd" component={Dnd}></Route>
             <Route path="/d3" component={D3View}></Route>
+            <Route path="/chat" component={ChatView}></Route>
         </div>
     );
 };

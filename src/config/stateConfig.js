@@ -1,6 +1,6 @@
 // 菜单状态
 export const menuState = {
-    defaultSelectedKeys: ['dnd'],
+    defaultSelectedKeys: ['chat'],
     defaultOpenKeys: ['ant-design'],
     mode: 'inline',
     theme: 'dark',
@@ -20,6 +20,8 @@ export const formItemLineLayout = {
     wrapperCol: { span: 18 },
 };
 
-export const INIT_ROUTER = '/dnd';
+export const socketUrl = 'ws://localhost:3002';
+
+export const INIT_ROUTER = '/chat';
 
 

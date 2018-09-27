@@ -1,0 +1,22 @@
+@import "../../style/common.less";
+
+.dnd{
+    .width_height_100;
+    .dnd_drag{
+        .height(100%);
+        .dnd_drag_are{
+            .height(45%);
+            .dnd_drag_area1{
+                .height(100%);
+                border: 1px solid rgb(112, 105, 91);
+            }
+        }
+        .dnd_drag_are:last-child{
+            margin-top: 10%;
+        }
+    }
+    .dnd_drop{
+        border: 1px solid blue;
+        .height(100%);
+    }
+}
