@@ -1,5 +1,5 @@
 import React from 'react';
-import { Table } from 'antd';
+import { Table, Popconfirm } from 'antd';
 import {inject, observer} from 'mobx-react';
 import EditDialog from './EditDialog';
 
@@ -62,7 +62,10 @@ export default class Search extends React.Component{
                 return (
                     <span>
                         <a href="javascript:;" onClick={this.onEdit.bind(this, record)}>修改</a>
-                        <a href="javascript:;" style={{marginLeft: '10px'}} onClick={this.onDelete.bind(this, text, record)}>删除</a>
+
+                        <Popconfirm onConfirm={this.onDelete.bind(this, text, record)} title="Are you sure？" okText="Yes" cancelText="No">
+                            <a href="javascript:;" style={{marginLeft: '10px'}} >删除</a>
+                        </Popconfirm>
                     </span>
                 );
             }

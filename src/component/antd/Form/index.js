@@ -7,7 +7,7 @@ import './index.less';
 
 @inject('AntdFormStore')
 @observer
-export default class Demo1 extends React.Component{
+export default class MyForm extends React.Component{
 
     antdFormStore = null;
 

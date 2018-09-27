@@ -5,9 +5,22 @@
       "react",
       "mobx"
     ],
+    "env": {
+        "production": {
+          "presets": ["minify"]
+        }
+    },
     "plugins": [
         "react-hot-loader/babel",
         ["import", { "libraryName": "antd", "libraryDirectory": "es", "style": true }],
-        "transform-decorators-legacy"
+        "transform-decorators-legacy",
+        ["transform-inline-environment-variables", {
+            "include": [
+              "NODE_ENV"
+            ]
+        }],
+        "transform-node-env-inline",
+        ["transform-remove-console", { "exclude": [ "error", "warn"] }],
+        "transform-remove-debugger"
     ]
   }

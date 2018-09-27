@@ -1,0 +1,35 @@
+@import "../../style/common.less";
+
+.flow_chart{
+    .width_height_100;
+    position: relative;
+    .flow_endpoint{
+        background: rgb(150, 192, 86);
+        // border-radius: 50%;
+    }
+    .flow_endpoint_active{
+        background: rgb(223, 170, 27);
+        // border-radius: 50%;
+    }
+    #test1, #test2, #test3{
+        width: 100px;
+        height: 100px;
+        position: absolute;
+        background: red;
+    }
+    #test2{
+        background: blue;
+        left: 300px;
+        top: 200px;
+    }
+    #test3{
+        background: #11cf96;
+        left: 638px;
+        top: 95px;
+    }
+    .endpoint_img {
+        width: 5px!important;
+        height: 5px!important;
+        border-radius: 50%;
+    }
+}

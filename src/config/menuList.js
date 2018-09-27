@@ -8,29 +8,45 @@ const list = [
                 key: 'form',
                 label: 'form',
                 icon: 'lock',
-                path: '/'
+                path: '/antd/form'
+            },
+            {
+                key: 'other',
+                label: 'other',
+                icon: 'ellipsis',
+                path: '/antd/other'
             },
 
         ]
     },
     {
-        key: 'echarts',
-        label: 'echarts',
-        icon: 'area-chart',
-        children: [
-            {
-                key: 'line',
-                label: '折线图',
-                icon: 'line-chart',
-                path: '/'
-            },
-
-        ]
+        key: 'map',
+        label: '地图',
+        icon: 'alipay-circle',
+        path: '/map'
+    },
+    {
+        key: 'flow',
+        label: 'flow',
+        icon: 'alipay-circle',
+        path: '/flow'
+    },
+    {
+        key: 'dnd',
+        label: 'dnd',
+        icon: 'alipay-circle',
+        path: '/dnd'
+    },
+    {
+        key: 'd3',
+        label: 'd3',
+        icon: 'alipay-circle',
+        path: '/d3'
     },
     {
         key: 'sub_2',
         label: '可视化数据2',
-        icon: 'area-chart4',
+        icon: 'alipay-circle',
         children: [
             {
                 key: 'sub_2_1',
