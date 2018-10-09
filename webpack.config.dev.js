@@ -41,16 +41,11 @@ const clean_plugin = new CleanWebpackPlugin(pathsToClean, cleanOptions);
 const hot_plugin = new webpack.HotModuleReplacementPlugin();
 const compressCode = new UglifyJSPlugin({
 	sourceMap: dev ? true : false,
-	cache: dev ? true : false,
-	uglifyOptions: {
-		compress: {
-			drop_console: true,
-			drop_debugger: true
-		}
-	}
+	cache: dev ? true : false
 });
 
 module.exports = (env, argv) => {
+    if(!argv) argv = {mode: 'production'};
 	console.info(`${chalk.blue('npm_lifecycle_event: ', commandTarget)}`);
 	console.info(`${chalk.blue('mode: ', argv.mode)}`);
 	let configuration = {
@@ -70,7 +65,7 @@ module.exports = (env, argv) => {
 			historyApiFallback: true,
 			proxy: {
 				'/v1': {
-					target: 'http://localhost:8081',
+					target: 'http://localhost:3001',
 					pathRewrite: {'^/v1' : '/v1'},
 					changeOrigin: true,
 				}

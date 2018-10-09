@@ -19,7 +19,6 @@ export default class Map extends React.Component{
         let canvas1 = document.getElementById('canvas1');
         if(canvas1.getContext) {
             let ctx = canvas1.getContext('2d');
-
             console.log(ctx);
         }
     }

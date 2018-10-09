@@ -8,30 +8,29 @@
     "plugins": [
         "react-hot-loader/babel",
         ["import",
-            {
-                "libraryName": "antd",
-                "libraryDirectory": "es",
-                "style": true
-            }
-        ],
+            { "libraryName": "antd", "libraryDirectory": "es", "style": true }],
         "transform-decorators-legacy",
         "minify-constant-folding",
-        ["minify-dead-code-elimination",
-            {
-                "optimizeRawSize": true
-            }
-        ],
+        "minify-dead-code-elimination",
         "minify-flip-comparisons",
         "minify-guarded-expressions",
         "minify-infinity",
-        ["minify-mangle-names",
-            { "exclude":
-                {
-                    "foo": true,
-                    "bar": true
-                }
-            }
-        ]
-
+        ["minify-replace", {
+            "replacements": [{
+              "identifierName": "__DEV__",
+              "replacement": {
+                "type": "booleanLiteral",
+                "value": true
+              }
+            }]
+          }],
+          "minify-type-constructors",
+          "transform-member-expression-literals",
+          "transform-merge-sibling-variables",
+          "transform-minify-booleans",
+          "transform-property-literals",
+          "transform-node-env-inline",
+        ["transform-remove-console", { "exclude": [ "error", "warn"] }],
+        "transform-remove-debugger"
     ]
   }
