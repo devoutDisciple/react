@@ -15,12 +15,21 @@ export default class Map extends React.Component{
         this.canvasStore = props.CanvasStore;
     }
 
+    componentDidMount() {
+        let canvas1 = document.getElementById('canvas1');
+        if(canvas1.getContext) {
+            let ctx = canvas1.getContext('2d');
+
+            console.log(ctx);
+        }
+    }
+
 
     render() {
 
         return (
             <div className='canvas'>
-                canvas
+                <canvas id='canvas1' width='300' height='300'></canvas>
             </div>
         );
     }

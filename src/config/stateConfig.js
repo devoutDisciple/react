@@ -1,6 +1,6 @@
 // 菜单状态
 export const menuState = {
-    defaultSelectedKeys: ['form'],
+    defaultSelectedKeys: ['canvas'],
     defaultOpenKeys: ['ant-design'],
     mode: 'inline',
     theme: 'dark',
@@ -22,6 +22,6 @@ export const formItemLineLayout = {
 
 export const socketUrl = 'ws://localhost:3002';
 
-export const INIT_ROUTER = '/antd/form';
+export const INIT_ROUTER = '/canvas';
 
 

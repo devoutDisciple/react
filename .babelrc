@@ -7,7 +7,31 @@
     ],
     "plugins": [
         "react-hot-loader/babel",
-        ["import", { "libraryName": "antd", "libraryDirectory": "es", "style": true }],
-        "transform-decorators-legacy"
+        ["import",
+            {
+                "libraryName": "antd",
+                "libraryDirectory": "es",
+                "style": true
+            }
+        ],
+        "transform-decorators-legacy",
+        "minify-constant-folding",
+        ["minify-dead-code-elimination",
+            {
+                "optimizeRawSize": true
+            }
+        ],
+        "minify-flip-comparisons",
+        "minify-guarded-expressions",
+        "minify-infinity",
+        ["minify-mangle-names",
+            { "exclude":
+                {
+                    "foo": true,
+                    "bar": true
+                }
+            }
+        ]
+
     ]
   }
