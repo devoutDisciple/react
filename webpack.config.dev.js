@@ -205,7 +205,8 @@ module.exports = (env, argv) => {
 		},
 		plugins: [
 			COMMON_0_CSS,
-			COMMON_1_CSS,
+            COMMON_1_CSS,
+            COMMON_0_LESS,
 			COMMON_1_LESS,
 			new HappyPack({
 				//如何处理 用法和loader 的配置一样

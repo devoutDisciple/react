@@ -6,6 +6,7 @@ import DndStore from './dnd/DndStore';
 import FlowStore from './flow/FlowStore';
 import D3Store from './d3/D3Store';
 import ChatStore from './chat/ChatStore';
+import CanvasStore from './canvas/CanvasStore';
 
 export const createStore = () => {
     return {
@@ -16,6 +17,7 @@ export const createStore = () => {
         DndStore,
         FlowStore,
         D3Store,
-        ChatStore
+        ChatStore,
+        CanvasStore
     };
 };

@@ -20,6 +20,12 @@ const list = [
         ]
     },
     {
+        key: 'canvas',
+        label: 'canvas',
+        icon: 'alipay-circle',
+        path: '/canvas'
+    },
+    {
         key: 'map',
         label: '地图',
         icon: 'alipay-circle',

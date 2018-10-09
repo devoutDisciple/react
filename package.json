@@ -6,9 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start:dev": "npm run start",
-    "start:prod": "npm run product",
     "start": "webpack-dev-server --progress --profile --colors --config ./webpack.config.dev.js --mode development",
-    "product": "webpack-dev-server --progress --profile --colors --config ./webpack.config.prod.js --mode production",
     "build:prod": "webpack -p --config ./webpack.config.dev.js --mode production --progress --profile --colors",
     "build:dev": "webpack --progress --profile --colors --config ./webpack.config.dev.js --mode development",
     "build:test": "npm run build:dev",

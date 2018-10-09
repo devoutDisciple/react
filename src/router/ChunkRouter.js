@@ -2,6 +2,7 @@ import React from 'react';
 import { Route, Redirect} from 'react-router-dom';
 import Form from '$component/antd/Form/index';
 import Other from '$component/antd/Other/index';
+import Canvas from '../component/canvas/index';
 import Map from '$component/Map/Map';
 import Dnd from '$component/dnd/index';
 import Flow from '$component/flow/index';
@@ -16,6 +17,7 @@ const ChunkRoute = () => {
             <Redirect from="/" to={INIT_ROUTER}/>
             <Route path="/antd/form" component={Form}></Route>
             <Route path="/antd/other" component={Other}></Route>
+            <Route path="/canvas" component={Canvas}></Route>
             <Route path="/map" component={Map}></Route>
             <Route path="/flow" component={Flow}></Route>
             <Route path="/dnd" component={Dnd}></Route>
