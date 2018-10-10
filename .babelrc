@@ -1,14 +1,19 @@
 {
     "presets": [
-      "es2015",
-      "stage-2",
-      "react",
-      "mobx"
+        "es2015",
+        "stage-2",
+        "react",
+        "mobx"
     ],
     "plugins": [
         "react-hot-loader/babel",
         ["import",
-            { "libraryName": "antd", "libraryDirectory": "es", "style": true }],
+            {
+                "libraryName": "antd",
+                "libraryDirectory": "es",
+                "style": true
+            }
+        ],
         "transform-decorators-legacy",
         "minify-constant-folding",
         "minify-dead-code-elimination",
@@ -17,20 +22,18 @@
         "minify-infinity",
         ["minify-replace", {
             "replacements": [{
-              "identifierName": "__DEV__",
-              "replacement": {
-                "type": "booleanLiteral",
-                "value": true
-              }
+                "identifierName": "__DEV__",
+                "replacement": {
+                    "type": "booleanLiteral",
+                    "value": true
+                }
             }]
-          }],
-          "minify-type-constructors",
-          "transform-member-expression-literals",
-          "transform-merge-sibling-variables",
-          "transform-minify-booleans",
-          "transform-property-literals",
-          "transform-node-env-inline",
-        ["transform-remove-console", { "exclude": [ "error", "warn"] }],
-        "transform-remove-debugger"
+        }],
+        "minify-type-constructors",
+        "transform-member-expression-literals",
+        "transform-merge-sibling-variables",
+        "transform-minify-booleans",
+        "transform-property-literals",
+        "transform-node-env-inline"
     ]
-  }
+}
