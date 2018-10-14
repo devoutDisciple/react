@@ -2,13 +2,13 @@ import React from 'react';
 import {inject, observer} from 'mobx-react';
 import './index.less';
 import CanvasStore from '../../stores/canvas/CanvasStore';
+import ProcessCanvas from './Process';
 
 @inject('CanvasStore')
 @observer
 export default class Map extends React.Component{
 
     canvasStore: CanvasStore = null;
-    jsplumbInstance : any = null;
 
     constructor(props) {
         super(props);
@@ -125,6 +125,7 @@ export default class Map extends React.Component{
         return (
             <div className='canvas'>
                 <canvas id='canvas1' width='300' height='300'></canvas>
+                <ProcessCanvas />
             </div>
         );
     }

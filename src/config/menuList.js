@@ -26,6 +26,12 @@ const list = [
         path: '/canvas'
     },
     {
+        key: 'bullet',
+        label: '黑幕特效',
+        icon: 'alipay-circle',
+        path: '/bullet'
+    },
+    {
         key: 'map',
         label: '地图',
         icon: 'alipay-circle',
